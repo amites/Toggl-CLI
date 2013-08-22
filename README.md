@@ -1,5 +1,7 @@
 # Toggl CLI
 
+### Caveat -- Currently relies upon Toggl API v6 to be deprecated in September 2013
+
 Although time tracking is an essential workflow tool, taking the time to click through a web app every time you start and stop a task is extremely annoying. The Toggl CLI (Command Line Interface) attempts to solve this issue by making it easy and fast to track your time.
 
 ## What is [Toggl](http://toggl.com)?
