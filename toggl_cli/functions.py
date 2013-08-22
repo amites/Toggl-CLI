@@ -317,8 +317,10 @@ def get_project(small=False):
         # It's stored Client - Project under the API
         tmp = TOGGL["CLIENT"] +" - "+ TOGGL["PROJECT"]
         project = get_data_where("projects", {"client_project_name":tmp})
-    else:
+    elif "PROJECT" in TOGGL.keys():
         project = get_data_where("projects", {"name":TOGGL["PROJECT"]})
+    else:
+        exit("Must define a PROJECT in .toggl")
     # Should only be one response
     project = project[0]
 

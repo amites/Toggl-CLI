@@ -37,7 +37,13 @@ if "PASSWORD" not in TOGGL.keys():
 
 # API convenience vars
 API_PREFIX = "https://www.toggl.com/api/v6/"
-AUTH = (TOGGL["EMAIL"], TOGGL["PASSWORD"])
+try:
+    AUTH = (TOGGL['APIKEY'], 'api_token')
+except KeyError:
+    try:
+        AUTH = (TOGGL["EMAIL"], TOGGL["PASSWORD"])
+    except KeyError:
+        exit("Must define ApiKey, or Email & Password")
 
 # Task prompt
 PROMPT = "What are you working on?: "
